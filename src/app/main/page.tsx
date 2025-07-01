@@ -1,31 +1,29 @@
 import React from "react";
 import { motion } from "framer-motion";
-import HeroSection from "../animations/hero";
-import ParticleAnimation from "../animations/particle";
+import Hero from "../../components/Hero";
+import Particles from "../../components/Particles";
 
-export const Main = () => {
+export default function Main() {
   return (
     <div>
-      <div className="flex justify-between items-center width-80 h-150 pt-50 mb-20 ">
+      <div className="flex justify-between items-center width-80 h-150 pt-50 mb-20">
         {/* Particles Background */}
-        <ParticleAnimation />
+        <Particles />
         <div>
-          <HeroSection
-            para="A Frontend Developer crafting clean, creative, and interactive web
-          experiences."
+          <Hero
             heading="Mohammad Irfan"
+            description="A Frontend Developer crafting clean, creative, and interactive web experiences."
+            imageSrc="/Images/irfan.png"
+            imageAlt="Mohammad Irfan - Frontend Developer"
           />
         </div>
         {/* <Image src={irfan} alt="Irfan" className="irfan_image" /> */}
-        <motion.img
-          initial={{ opacity: 0, y: 60 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          src="Images/irfan.png"
-          className="irfan_image"
+        <img
+          src="/Images/irfan.png"
+          className="irfan_image animate-fade-in-up"
           alt="Irfan"
         />
       </div>
     </div>
   );
-};
+}
